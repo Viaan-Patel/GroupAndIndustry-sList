@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>JM Group and Industry's List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <style>
+body{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE_eAFvcimDV1sJKhCo2QLhrZO2gfNo8UtNP2sNxdSgA&s=10);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+    </style>
+</head>
+<body>
+
+<div class="container p-3 rounded-3 mt-5 opacity-75 bg-white">
+<div class="bg-primary text-light p-3 rounded-3 text-center  m-3">
+<h1>JM Group and Industry's</h1>
+<p>Manage employee information and calculate total monthly salaries.</p>
+</div>
+<!-- table starts -->
+<div class="table-responsive">
+<table class="table table-bordered table-striped text-center">
+<thead class="table-light">
+<tr>
+<th>Name</th>
+<th>Position</th>
+<th>Monthly Salary ($)</th>
+</tr>
+</thead>
+<tbody id="employeetable"></tbody>
+</table>
+</div>
+</div>
+
+<script>
+const employees = [
+    {
+        name: "John Doe", 
+        position: "Software Engineer",
+        salary: 5000
+    },
+    {
+        name: "Jane Smith", 
+        position: "Designer",
+        salary: 4000
+    },
+    {
+        name: "Alice Johnson", 
+        position: "Marketing Manager",
+        salary: 6000
+    },
+    {
+        name: "Tom Jane", 
+        position: "Business Organiser",
+        salary: 7000
+    },
+    {
+        name: "Het Fullon", 
+        position: "Assistant Manager",
+        salary: 6500
+    },
+    {
+        name: "Samuel Menn", 
+        position: "Superviser",
+        salary: 7000
+    },
+]
+
+function displayEmployees(){
+    let tableBody = document.getElementById("employeetable");
+    tableBody.innerHTML = "";
+
+    for(let i = 0; i < employees.length; i++){
+    tableBody.innerHTML += `
+    <tr>
+<td>${employees[i].name}</td>
+<td>${employees[i].position}</td>
+<td>${employees[i].salary}</td>
+    </tr>
+    `;
+    }
+}
+
+displayEmployees()
+
+</script>
+</body>
+</html>
